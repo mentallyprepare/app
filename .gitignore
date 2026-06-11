@@ -1,0 +1,47 @@
+# Node / Expo
+node_modules/
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native build output
+android/app/build/
+ios/build/
+*.apk
+*.aab
+*.ipa
+
+# EAS / credentials — never commit secrets
+.env
+.env.*
+!.env.example
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+google-services.json
+GoogleService-Info.plist
+credentials.json
+
+# Logs and local junk
+*.log
+npm-debug.*
+yarn-error.*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Local databases (never belong in this repo)
+*.db
+*.db-shm
+*.db-wal
+
+# Misc data files that belong to other projects
+*.csv
+*.vsix
