@@ -1,4 +1,5 @@
 import * as Device from 'expo-device';
+import { Link } from 'expo-router';
 import { Platform, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -37,6 +38,11 @@ export default function HomeScreen() {
           <ThemedText type="title" style={styles.title}>
             Welcome to&nbsp;Expo
           </ThemedText>
+          {__DEV__ && (
+            <Link href="/_dev/theme">
+              <ThemedText type="small">Open theme showcase</ThemedText>
+            </Link>
+          )}
         </ThemedView>
 
         <ThemedText type="code" style={styles.code}>
