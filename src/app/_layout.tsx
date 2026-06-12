@@ -9,8 +9,10 @@ import { useEffect } from 'react';
 
 import { AnimatedSplashOverlay } from '@/components/animated-icon';
 import AppTabs from '@/components/app-tabs';
+import { initSentry, Sentry } from '@/sentry';
 import { colors } from '@/theme';
 
+initSentry();
 SplashScreen.preventAutoHideAsync();
 
 // The app is one color scheme: the night. No light mode.
@@ -26,7 +28,7 @@ const nightTheme = {
   },
 };
 
-export default function TabLayout() {
+function TabLayout() {
   const [fontsLoaded, fontError] = useFonts({
     PlayfairDisplay_500Medium_Italic,
     PlayfairDisplay_600SemiBold_Italic,
@@ -49,3 +51,5 @@ export default function TabLayout() {
     </ThemeProvider>
   );
 }
+
+export default Sentry.wrap(TabLayout);
