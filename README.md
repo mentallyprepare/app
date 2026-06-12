@@ -14,13 +14,11 @@ Read `CLAUDE.md` before writing any code. It summarizes the sacred list, voice r
 
 ## Context documents
 
-| File | Status |
+| File | Purpose |
 |---|---|
-| `CLAUDE.md` | ✅ in repo |
-| `BLUEPRINT.md` | ⬜ to be added (13-week phase plan) |
-| `API.md` | ⬜ to be added (endpoint contract, source of truth) |
-| `PRINCIPLES.md` | ⬜ to be added (founder-signed sacred list) |
-| `SYSTEMS.md` | ⬜ to be added (partner health, notifications, AI boundaries) |
-| `NEXT.md` | ⬜ to be added (parked ideas) |
-
-No code work starts until `BLUEPRINT.md` and `API.md` are in place.
+| `CLAUDE.md` | Rules for AI-assisted development |
+| `BLUEPRINT.md` | The 13-week phase plan with exit gates |
+| `API.md` | Endpoint contract (source of truth) |
+| `PRINCIPLES.md` | Founder-signed sacred list (wins on conflict) |
+| `SYSTEMS.md` | Partner health, notification policy, AI boundaries |
+| `NEXT.md` | Parked ideas, reviewed monthly |
