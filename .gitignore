@@ -25,10 +25,22 @@ google-services.json
 GoogleService-Info.plist
 credentials.json
 
+# Generated native folders (Expo prebuild)
+/ios
+/android
+.kotlin/
+*.orig.*
+
+# Metro / TypeScript build info
+.metro-health-check*
+*.tsbuildinfo
+
 # Logs and local junk
 *.log
 npm-debug.*
+yarn-debug.*
 yarn-error.*
+*.pem
 
 # Editor / OS
 .DS_Store
