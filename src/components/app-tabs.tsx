@@ -5,7 +5,10 @@ import { Colors } from '@/constants/theme';
 
 export default function AppTabs() {
   const scheme = useColorScheme();
-  const colors = Colors[scheme === 'unspecified' ? 'light' : scheme];
+  // useColorScheme() can return 'unspecified', null, or undefined (no native
+  // Appearance value); anything that isn't explicitly 'dark' defaults to light
+  // so colors is never undefined.
+  const colors = scheme === 'dark' ? Colors.dark : Colors.light;
 
   return (
     <NativeTabs
