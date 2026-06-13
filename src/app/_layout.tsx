@@ -3,12 +3,10 @@ import {
   PlayfairDisplay_600SemiBold_Italic,
   useFonts,
 } from '@expo-google-fonts/playfair-display';
-import { DarkTheme, ThemeProvider } from 'expo-router';
+import { DarkTheme, Stack, ThemeProvider } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
 import { initSentry, Sentry } from '@/sentry';
 import { colors } from '@/theme';
 
@@ -28,7 +26,7 @@ const nightTheme = {
   },
 };
 
-function TabLayout() {
+function RootLayout() {
   const [fontsLoaded, fontError] = useFonts({
     PlayfairDisplay_500Medium_Italic,
     PlayfairDisplay_600SemiBold_Italic,
@@ -46,10 +44,19 @@ function TabLayout() {
 
   return (
     <ThemeProvider value={nightTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          contentStyle: { backgroundColor: colors.bg },
+        }}>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="(auth)" />
+        <Stack.Screen name="(app)" />
+        <Stack.Screen name="match-ceremony" options={{ presentation: 'modal' }} />
+        <Stack.Screen name="reveal" options={{ presentation: 'modal' }} />
+      </Stack>
     </ThemeProvider>
   );
 }
 
-export default Sentry.wrap(TabLayout);
+export default Sentry.wrap(RootLayout);
